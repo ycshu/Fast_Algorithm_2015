@@ -30,6 +30,7 @@
 	for(i=1;i<=7;i=i+1)
 	{
 		u[i]=(x[i]+x[i+1]+x[i+2])/3; 
+		printf("u[%d]=%d\n",i,u[i]);
 	}
 	/*
 	   3U = [1 1 1 0 0 0 0...0] x[0]
@@ -39,7 +40,7 @@
 	// ¥H¤Wbaby problem.....  
 	child_problem(10);
 	youth_problem(20,5); 
-	univesity_problem(20,6);
+	univesity_problem(100,6);
 	return 325;
 	
 	}
@@ -81,6 +82,7 @@
 		for(j=1;j<K;j=j+1)    //j:1,2,...,K-1
 	    {
 		     u[i]=u[i]+x[i+j];	 
+		     printf("u[%d]=%d\n",i,u[i]);
 	    }   
 	    u[i] = u[i]/K; 
 	}
@@ -122,6 +124,7 @@
 	    for(i=1;i<=N-K;i=i+1)
 	    {
 	    	u[i] = u[i-1]+(x[K+i-1]-x[i-1])/K;
+	    	printf("u[%d]=%d\n",i,u[i]);
 		}
 	
 	printf("hello university-%d,%d\n",N,K);
