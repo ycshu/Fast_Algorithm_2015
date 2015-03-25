@@ -185,10 +185,10 @@ int graduated_problem(int N, int K)
 	/* u[0] = (x[0]+4*x[1]+6*x[2]+4*x[3]+x[4])/16
 	   u[1] = (x[1]+4*x[2]+6*x[3]+4*x[4]+x[5])/16
 	   
-	   [1,4,6,4,1] --> FFT
-	   x --> FFT
-	   對應相乘
-	   --> iFFT --> u
+	   [1,4,6,4,1] --> FFT -> N log N operations
+	   x --> FFT           -> N log N operations
+	   對應相乘            -> N       operations
+	   --> iFFT --> u      -> N log N operations
 	    
 	   u[1] = u[0]+(x[K]-x[0])/K
 	   u[2] = u[1]+(x[K+1]-x[1])/K
