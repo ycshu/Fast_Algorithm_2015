@@ -5,7 +5,7 @@
 #define DEBUG 0
 int main()
 {
-	int i, j, N=500;
+	int i, j, N=10000;
 	double *x,*b,tic,toc;
     double **A;
     x=(double *) malloc( N * sizeof(double));
