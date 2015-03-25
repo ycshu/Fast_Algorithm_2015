@@ -15,4 +15,7 @@ for i=1:N
         b(i) = b(i) + A(i,j)*x(j);
     end
 end
+x
+A
+b
 toc
