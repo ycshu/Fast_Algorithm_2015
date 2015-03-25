@@ -1,6 +1,7 @@
 function matrix_vector(N)
 
 tic;
+<<<<<<< HEAD
 for i=1:N
     x(i) = cos(i*pi/N);
 end
@@ -18,4 +19,12 @@ end
 x
 A
 b
+=======
+ i=1:N
+    x = cos(i*pi/N)' ;
+
+        A = 1./(ones(N,1)*i+i'*ones(1,N)-1);
+        
+b =A*x
+>>>>>>> origin/C14011073
 toc
