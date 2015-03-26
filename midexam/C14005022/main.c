@@ -8,7 +8,7 @@
 #include <stdio.h>
 
 int main() {
-	int m=20,n=30,i,j;
+	int m=20,n=30,i,j;						//SIZE:A_{m,n}
 	for (i=1; i<=m; ++i) {
 		for (j=1; j<=n; ++j) {
 			if (i==j) {
