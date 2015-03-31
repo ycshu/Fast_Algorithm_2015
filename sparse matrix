@@ -1,7 +1,6 @@
 //creat sparse matrix (exmple form textbook fundamental of DA in C)
 #include <stdlib.h>
-#include <stdlib.h>
-#include <stdlib.h>
+#include <stdio.h>
 #define MAX_TERMS 101
 #define RROWW 6
 #define COLUMN 6
