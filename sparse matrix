@@ -1,0 +1,122 @@
+/*creat sparse matrix (exmple form textbook fundamental of DA in C)
+#include <stdlib.h>
+#include <stdlib.h>
+#include <stdlib.h>
+#define MAX_TERMS 101
+#define RROWW 6
+#define COLUMN 6
+typedef struct
+{
+	int col ;
+	int row ;
+	int value;
+	/*a[0]save number of nonzero term ;
+	for i!=0,a[i] save value of non-zeroterm at the index of orign matrix  M[a[i].row][a[i].col] */
+}term;
+term a[MAX_TERMS];
+term b[MAX_TERMS];
+void transpose(term[], term[]);
+void read(int M[RROWW][COLUMN], term[]);
+void readout(int M[RROWW][COLUMN], term[]);
+void display(int M[RROWW][COLUMN]);
+int main(void)
+{
+	int temp;
+	int M[RROWW][COLUMN] = { { 15, 0, 0, 22, 0, -15 }, { 0, 11, 3 }, { 0, 0, 0, -6 }, {}, { 91 }, { 0, 0, 28 } };
+	a[0].col = COLUMN;
+	a[0].row = RROWW;
+	b[0].row = RROWW;
+	b[0].col = COLUMN;
+	display(M);
+	read(M, a);
+	for (temp = 0; temp <=a[0].value; temp++)
+	{
+		printf("%d %d %d \n", a[temp].col, a[temp].row, a[temp].value);
+		printf("");
+	}
+	transpose(a,b);
+	for (temp = 0; temp <=a[0].value; temp++)
+	{
+		printf("%d %d %d \n", b[temp].col, b[temp].row, b[temp].value);
+		printf("");
+	}
+	readout(M,b);
+	display(M);
+	system("pause");
+	return 0;
+}
+void read(int M[RROWW][COLUMN], term a[])
+{
+	int i, j,temp;
+	temp = 1;
+		for (i = 0; i < RROWW; i++)
+		{
+			for (j = 0; j < COLUMN; j++)
+			if (M[i][j] )
+			{
+					a[temp].col = j;
+					a[temp].row = i;
+				 a[temp].value=M[i][j];
+				 a[0].value += 1;
+				 temp++;
+			}
+		}
+	}
+void readout(int M[RROWW][COLUMN], term b[])
+{
+	int i, j;
+	int temp;
+
+	for (temp = 1; temp <= b[0].value; temp++)
+	{
+
+	for (i = 0; i <= RROWW; i++)
+	{
+	for (j = 0; j <= COLUMN; j++)
+	{
+		if (b[temp].col == j && b[temp].row == i)
+			*(*(M + i) + j) = (b + temp)->value;
+		else
+		M[i][j]= 0;
+		continue;
+	}
+	}
+	}
+		//M[a[temp].row][a[temp].col] = a[temp].value;
+}
+void transpose(term a[], term b[])
+{
+	int n, i, j, currentb;
+	n = a[0].value;
+	b[0].row = a[0].col;
+	b[0].col = a[0].row;
+	b[0].value = n;
+	if (n > 0)
+	{
+		currentb = 1;
+		for (i = 0; i < a[0].col; i++)
+		{
+			for (j = 1; j <=n; j++)
+			if (a[j].col == i)
+			{
+				b[currentb].row = a[j].col;
+				b[currentb].col = a[j].row;
+				b[currentb].value = a[j].value;
+				currentb++;
+			}
+		}
+	}
+}
+void display(int M[RROWW][COLUMN])
+{
+	int i, j;
+	for (i = 0; i < RROWW; i++)
+	{
+		for (j = 0; j < COLUMN; j++)
+		{
+			printf("%d ", M[i][j]);			
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
