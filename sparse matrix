@@ -1,4 +1,4 @@
-//creat sparse matrix (exmple form textbook fundamental of DA in C)
+//creat sparse matrix (exmple form textbook fundamental of Data Structure in C)
 #include <stdlib.h>
 #include <stdio.h>
 #define MAX_TERMS 101
