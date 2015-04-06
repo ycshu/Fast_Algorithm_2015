@@ -1,0 +1,6 @@
+Please write a program to construct a matrix A which 
+
+A_{i,j} = 2, if i = j
+A_{i,j} = -1, if j = i-1 or j=i+1
+A_{i,j} = 0, otherwise
+
