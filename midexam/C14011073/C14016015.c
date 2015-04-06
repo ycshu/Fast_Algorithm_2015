@@ -13,9 +13,12 @@ send the file and commit it in your directory :D
 int main()
 {
     int i;
+    double x[51];
+
     for(i=1;i<=101;i+=2)
     {
-                       printf("%d ",i);
+                       x[(i-1)/2] = i;
+                       printf("%.0f ",x[(i-1)/2]);
     }
     
     system("pause");
